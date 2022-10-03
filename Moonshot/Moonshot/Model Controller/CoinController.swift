@@ -16,7 +16,7 @@ class CoinController: Codable {
     private static let keyListComponents = "list"
  
     static func fetchCoins(completion: @escaping (Bool) -> Void) {
-        guard var baseURL = URL(string: baseURLString) else { return completion(false) }
+        guard let baseURL = URL(string: baseURLString) else { return completion(false) }
         let coinsURL = baseURL.appendingPathComponent(keyCoinsComponents)
         let finalURL = coinsURL.appendingPathComponent(keyListComponents)
         print(finalURL)
